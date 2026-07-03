@@ -10,7 +10,7 @@ import SectionDivider from "@/components/SectionDivider";
 const faqs = [
   {
     q: "What is Halal Certification?",
-    a: "Halal Certification is an official recognition issued by MUIS that confirms a business complies with the relevant halal requirements. It shows that your products, ingredients and operational practices meet recognised halal standards.",
+    a: "Halal Certification is an official recognition issued by MUIS that confirms a business complies with the relevant MUIS halal requirements. It shows that your products, ingredients and operational practices meet recognised MUIS halal standards.",
   },
   {
     q: "Why should my business become Halal Certified?",

@@ -18,10 +18,10 @@ const clients = [
   { name: "Wataa Bakery", logo: "/assets/clients/wataa-bakery.png" },
   { name: "All Good Gourmet", logo: "/assets/clients/all-good-gourmet.png" },
   { name: "Lee Wee & Brothers", logo: "/assets/clients/lee-wee-brothers.png" },
-  { name: "54 Bakery Cafe", logo: "/assets/clients/54-bakery-cafe.png" },
-  { name: "CCK Local Delights", logo: "/assets/clients/cck-local-delights.png" },
-  { name: "Boon Lay Cafe", logo: "/assets/clients/boon-lay-cafe.png" },
-  { name: "Chef Ibu", logo: "/assets/clients/chef-ibu.png" },
+  { name: "54 Bakery Cafe", logo: "/assets/clients/54-Bakery-Cafe.png" },
+  { name: "CCK Local Delights", logo: "/assets/clients/CCK-Local-Delights.png" },
+  { name: "Boon Lay Cafe", logo: "/assets/clients/Boon-Lay-Cafe.png" },
+  { name: "Chef Ibu", logo: "/assets/clients/Chef-Ibu.png" },
 ];
 
 function GoldDivider() {

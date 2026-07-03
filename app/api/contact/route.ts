@@ -21,8 +21,8 @@ export async function POST(request: Request) {
     });
 
     const { error } = await resend.emails.send({
-      from: "Nurul-Awal Website <onboarding@resend.dev>",
-      to: "nurmd2002@gmail.com",
+      from: "Nurul-Awal Website <enquiry@nurulawal.com.sg>",
+      to: "nurulawalcs@gmail.com",
       subject: `New Website Enquiry - ${service}`,
       replyTo: email,
       html: `

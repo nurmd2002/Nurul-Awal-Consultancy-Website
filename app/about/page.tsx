@@ -119,63 +119,64 @@ export default function AboutPage() {
 
       <SectionDivider />
 
-      <section id="our-story" className="relative overflow-hidden px-8 py-20">
-        <div className="absolute left-0 top-0 h-full w-[280px] opacity-[0.1] bg-[radial-gradient(circle,#d8b75b_1px,transparent_1px)] [background-size:16px_16px]" />
+      <section id="our-story" className="relative overflow-hidden px-8 py-20 max-md:px-5">
+  <div className="absolute left-0 top-0 h-full w-[280px] opacity-[0.1] bg-[radial-gradient(circle,#d8b75b_1px,transparent_1px)] [background-size:16px_16px]" />
 
-        <div className="relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-2">
-          <div className="rounded-[32px] border border-[#d8b75b]/40 bg-white p-3 shadow-[0_24px_80px_rgba(0,0,0,0.10)]">
-  <div className="relative h-[530px] w-full overflow-hidden rounded-[28px] bg-white">
-    <Image
-      src="/assets/story.png"
-      alt="Nurul-Awal consulting process illustration"
-      fill
-      priority
-      className="object-cover"
-      sizes="(max-width: 1024px) 100vw, 50vw"
-    />
+  <div className="relative z-10 mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-2 max-lg:gap-10">
+    <div className="rounded-[32px] border border-[#d8b75b]/40 bg-white p-3 shadow-[0_24px_80px_rgba(0,0,0,0.10)]">
+      <div className="overflow-hidden rounded-[28px] bg-white">
+        <Image
+          src="/assets/story.png"
+          alt="Nurul-Awal consulting process illustration"
+          width={1000}
+          height={1414}
+          priority
+          className="h-auto w-full"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+
+    <div>
+      <SectionLabel>Our Story</SectionLabel>
+
+      <h2 className="font-serif text-6xl leading-tight text-[#063f24] max-md:text-4xl">
+        Serving Businesses
+        <br />
+        Since 2002
+      </h2>
+
+      <div className="mt-7 flex w-28 items-center gap-3">
+        <span className="h-px flex-1 bg-[#c6aa47]" />
+        <span className="h-3 w-3 rotate-45 bg-[#c6aa47]" />
+        <span className="h-px flex-1 bg-[#c6aa47]" />
+      </div>
+
+      <p className="mt-8 text-lg leading-9 text-neutral-700 max-md:mt-6 max-md:text-base max-md:leading-8">
+        Nurul-Awal Consultants & Services was founded in 2002 by the late Haji. Mohamed
+        Jamaldin bin Abdul Latif who, after more than 30 years of service with
+        Singapore&apos;s National Environment Agency (NEA), recognised that
+        many business owners, particularly non-Muslims, were struggling to
+        obtain Halal Certification.
+      </p>
+
+      <p className="mt-5 text-lg leading-9 text-neutral-700 max-md:text-base max-md:leading-8">
+        Driven by a genuine desire to help, he dedicated himself to
+        understanding the MUIS Halal Certification requirements and established
+        Nurul-Awal Consultants & Services to guide businesses through the
+        certification process with clarity, confidence and professionalism.
+      </p>
+
+      <p className="mt-5 text-lg leading-9 text-neutral-700 max-md:text-base max-md:leading-8">
+        Since 2003, Mazlinah has worked alongside her father,
+        supporting clients and managing the consultancy&apos;s administrative
+        processes. Following his passing in 2016, she took over the
+        business and continues his legacy alongside her family, with the same commitment to
+        service.
+      </p>
+    </div>
   </div>
-</div>
-
-          <div>
-            <SectionLabel>Our Story</SectionLabel>
-
-            <h2 className="font-serif text-6xl leading-tight text-[#063f24]">
-              Serving Businesses
-              <br />
-              Since 2002
-            </h2>
-
-            <div className="mt-7 flex w-28 items-center gap-3">
-              <span className="h-px flex-1 bg-[#c6aa47]" />
-              <span className="h-3 w-3 rotate-45 bg-[#c6aa47]" />
-              <span className="h-px flex-1 bg-[#c6aa47]" />
-            </div>
-
-            <p className="mt-8 text-lg leading-9 text-neutral-700">
-              Nurul-Awal Consultants & Services was founded in 2002 by the late Haji. Mohamed
-              Jamaldin bin Abdul Latif who, after more than 30 years of service with
-              Singapore&apos;s National Environment Agency (NEA), recognised that
-              many business owners, particularly non-Muslims, were struggling to
-              obtain Halal Certification.
-            </p>
-
-            <p className="mt-5 text-lg leading-9 text-neutral-700">
-              Driven by a genuine desire to help, he dedicated himself to
-              understanding the MUIS Halal Certification requirements and established
-              Nurul-Awal Consultants & Services to guide businesses through the
-              certification process with clarity, confidence and professionalism.
-            </p>
-
-            <p className="mt-5 text-lg leading-9 text-neutral-700">
-              Since 2003, Mazlinah has worked alongside her father,
-              supporting clients and managing the consultancy&apos;s administrative
-              processes. Following his passing in 2016, she took over the
-              business and continues his legacy alongside her family, with the same commitment to
-              service.
-            </p>
-          </div>
-        </div>
-      </section>
+</section>
 
       <section id="vision-mission" className="relative bg-[#f3f8f1] px-8 py-20">
         <div className="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-2">

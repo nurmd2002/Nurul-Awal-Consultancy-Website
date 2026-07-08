@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="rounded-[32px] border border-[#d8b75b]/40 bg-white p-3 shadow-[0_24px_80px_rgba(0,0,0,0.10)]">
   <div className="relative h-[530px] w-full overflow-hidden rounded-[28px] bg-white">
     <Image
-      src="/assets/about-legacy-illustration.png"
+      src="/assets/story.png"
       alt="Nurul-Awal consulting process illustration"
       fill
       priority

@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-select:required:invalid {
-  color: #9ca3af;
-}
-
-select option {
-  color: #111827;
-}
-
-select option[value=""] {
-  color: #9ca3af;
-}
 :root {
   --background: #fbf7ef;
   --foreground: #171717;
@@ -31,7 +20,9 @@ select option[value=""] {
 }
 
 html {
+  background-color: #000;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -53,17 +44,19 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5ead8;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--green-dark);
   border-radius: 999px;
-  border: 2px solid #f5ead8;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--green-main);
+  background-clip: padding-box;
 }
 
 a,
@@ -77,6 +70,18 @@ button {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+select:required:invalid {
+  color: #9ca3af;
+}
+
+select option {
+  color: #111827;
+}
+
+select option[value=""] {
+  color: #9ca3af;
 }
 
 input,

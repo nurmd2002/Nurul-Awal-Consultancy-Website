@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const aboutLinks = [
   { label: "Our Story", href: "/about#our-story" },
@@ -60,22 +61,25 @@ function Dropdown({
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-white/95 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex h-24 w-full max-w-[1440px] items-center justify-between px-12">
-        <Link href="/" className="flex items-center">
+      <div className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between px-5 md:h-24 md:px-12">
+        <Link href="/" className="flex items-center" onClick={closeMenu}>
           <Image
             src="/assets/logo.png"
             alt="Nurul-Awal Consultants & Services"
             width={350}
             height={95}
             priority
-            className="h-auto w-[300px]"
+            className="h-auto w-[210px] md:w-[300px]"
           />
         </Link>
 
-        <nav className="flex items-center gap-10 font-serif text-lg text-black">
+        <nav className="hidden items-center gap-10 font-serif text-lg text-black lg:flex">
           <Link
             href="/"
             className={`transition ${
@@ -85,19 +89,8 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Dropdown
-            label="About"
-            href="/about"
-            items={aboutLinks}
-            active={pathname === "/about"}
-          />
-
-          <Dropdown
-            label="Services"
-            href="/services"
-            items={serviceLinks}
-            active={pathname === "/services"}
-          />
+          <Dropdown label="About" href="/about" items={aboutLinks} active={pathname === "/about"} />
+          <Dropdown label="Services" href="/services" items={serviceLinks} active={pathname === "/services"} />
 
           <Link
             href="/clients"
@@ -129,12 +122,62 @@ export default function Navbar() {
 
         <Link
           href="/contact"
-          className="rounded-md bg-[#177D3F] px-8 py-4 font-serif text-lg text-white transition hover:-translate-y-1 hover:bg-[#063f24]"
+          className="hidden rounded-md bg-[#177D3F] px-8 py-4 font-serif text-lg text-white transition hover:-translate-y-1 hover:bg-[#063f24] lg:block"
         >
           FREE ENQUIRY
-
         </Link>
+
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="flex h-11 w-11 items-center justify-center rounded-md border border-[#d8b75b]/50 text-[#063f24] lg:hidden"
+          aria-label="Toggle navigation menu"
+        >
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
+
+      {open && (
+        <div className="border-t border-[#d8b75b]/25 bg-white px-5 py-6 shadow-lg lg:hidden">
+          <div className="flex flex-col gap-5 font-serif text-xl text-[#063f24]">
+            <Link href="/" onClick={closeMenu}>Home</Link>
+
+            <div>
+              <Link href="/about" onClick={closeMenu}>About</Link>
+              <div className="mt-3 flex flex-col gap-2 pl-4 text-base text-neutral-600">
+                {aboutLinks.map((item) => (
+                  <Link key={item.href} href={item.href} onClick={closeMenu}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Link href="/services" onClick={closeMenu}>Services</Link>
+              <div className="mt-3 flex flex-col gap-2 pl-4 text-base text-neutral-600">
+                {serviceLinks.map((item) => (
+                  <Link key={item.href} href={item.href} onClick={closeMenu}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/clients" onClick={closeMenu}>Our Clients</Link>
+            <Link href="/faq" onClick={closeMenu}>FAQ</Link>
+            <Link href="/contact" onClick={closeMenu}>Contact</Link>
+
+            <Link
+              href="/contact"
+              onClick={closeMenu}
+              className="mt-2 rounded-md bg-[#177D3F] px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white"
+            >
+              Free Enquiry
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
-}
+} 
